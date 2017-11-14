@@ -1,0 +1,15 @@
+<h1>Tasks#index</h1>
+<br>
+<ul>
+<% @tasks.each do |task| %>
+  <li>
+    <ul>
+      <h3><%= link_to print_task(task), task_path(task) %></h3>
+      <li><%= link_to "Edit", edit_task_path(task) %></li>
+      <li><%= link_to_delete(task) %></li>
+    </ul>
+  </li>
+<% end %>
+</ul>
+<br>
+<h3><%= link_to "Create Task", new_task_path %></h3>
